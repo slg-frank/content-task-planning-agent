@@ -1,0 +1,31 @@
+{
+  "actual_cli_execution": true,
+  "artifacts": {
+    "output_status": "completed",
+    "plan_sha256": "e45c6b94f953c7baa3bd5fc46fa06c23cf974cc700c32a47c444e4c56ffa9d44",
+    "runtime_created": true,
+    "state_sha256": "492995a6d8a11d6d0004b09568c16046534f5026f28614d583f645b88fcde924",
+    "trace_created": true,
+    "trace_sha256": "7e385c6ef20dde0da51a7dcbecd660dee2f285e391b3526e13dabbfd4b00ded3"
+  },
+  "command": [
+    "python",
+    "-m",
+    "content_agent.cli",
+    "run",
+    "--input",
+    "input.json",
+    "--runtime-dir",
+    "${RUNTIME_ROOT}"
+  ],
+  "exit_code": 0,
+  "generated_at": "2026-10-28T09:25:47.583341+00:00",
+  "path_normalization": {
+    "applied": true,
+    "replacement": "${RUNTIME_ROOT}",
+    "scope": "temporary input and runtime paths only"
+  },
+  "scenario": "normal",
+  "schema_version": 1,
+  "stderr": "任务 acceptance-normal 已完成；方案：${RUNTIME_ROOT}\\plans\\acceptance-normal.json；轨迹：${RUNTIME_ROOT}\\traces\\acceptance-normal.trace.jsonl"
+}

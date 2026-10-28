@@ -1,0 +1,15 @@
+{
+  "errors": [
+    {
+      "code": "missing_budget",
+      "field": "budget",
+      "message": "budget is required"
+    }
+  ],
+  "incomplete_reason": null,
+  "saved_plan_path": null,
+  "state": null,
+  "status": "invalid_input",
+  "task_id": null,
+  "trace_path": null
+}

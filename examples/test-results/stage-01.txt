@@ -1,0 +1,24 @@
+Stage: 01 - 项目骨架与可运行基线
+Date: 2026-10-28 (Asia/Shanghai)
+Environment: Windows, Python 3.13.13, pytest 9.2.0
+
+Dependency installation:
+  python -m pip install -r requirements.txt
+  Result: PASSED
+
+Editable package installation:
+  python -m pip install -e .
+  Result: PASSED
+
+Stage test command:
+  python -m pytest tests/test_stage_01_structure.py -v
+Result:
+  8 passed, 0 failed, 0 skipped
+
+Full regression command:
+  python -m pytest tests/ -v
+Result:
+  8 passed, 0 failed, 0 skipped
+
+Stage gate decision:
+  PASSED - 阶段 01 的实现、独立测试和全量回归均已完成。

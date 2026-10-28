@@ -1,0 +1,26 @@
+Stage: 03 - 合成数据与四类业务工具
+Date: 2026-10-28 (Asia/Shanghai)
+Environment: Windows, Python 3.13.13, pytest 9.2.0
+
+Stage test command:
+  python -m pytest tests/test_stage_03_tools.py -v
+Result:
+  16 passed, 0 failed, 0 skipped
+
+Full regression command:
+  python -m pytest tests/ -v
+Result:
+  50 passed, 0 failed, 0 skipped
+
+Verified behavior:
+  - Material search, script generation, cost estimation and plan save succeed independently.
+  - Tool invocation cost and simulated duration match the JSON data tables.
+  - Identical inputs produce reproducible outputs.
+  - Standard and economy profiles estimate to 12.00 and 8.00 mock units.
+  - Each tool supports a deterministic one-time injected failure and then recovers.
+  - Injected and business failures are non-billable, structured and never marked successful.
+  - Partial material and script results identify completed and missing/ignored portions.
+  - Saved JSON matches the provided plan and cannot escape the approved output root.
+
+Stage gate decision:
+  PASSED - 阶段 03 的实现、独立测试和阶段 01～03 全量回归均已完成。

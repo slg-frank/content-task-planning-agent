@@ -1,0 +1,50 @@
+[
+  {
+    "id": "mat-001",
+    "title": "秋季新品发布内容框架",
+    "content_type": "outline",
+    "license": "synthetic",
+    "keywords": ["秋季", "新品", "发布"],
+    "summary": "适用于新品活动的预热、发布和复盘三段式内容框架。"
+  },
+  {
+    "id": "mat-002",
+    "title": "秋季生活方式场景素材",
+    "content_type": "scene_notes",
+    "license": "synthetic",
+    "keywords": ["秋季", "生活方式", "场景"],
+    "summary": "包含通勤、周末与居家场景的合成素材描述。"
+  },
+  {
+    "id": "mat-003",
+    "title": "新品卖点表达模板",
+    "content_type": "copy_template",
+    "license": "synthetic",
+    "keywords": ["新品", "卖点", "转化"],
+    "summary": "用于将产品特点改写成用户利益点的文案模板。"
+  },
+  {
+    "id": "mat-004",
+    "title": "节日社交互动玩法",
+    "content_type": "campaign_idea",
+    "license": "synthetic",
+    "keywords": ["节日", "社交", "互动"],
+    "summary": "提供投票、话题挑战和用户共创的活动思路。"
+  },
+  {
+    "id": "mat-005",
+    "title": "低预算短视频清单",
+    "content_type": "checklist",
+    "license": "synthetic",
+    "keywords": ["低预算", "短视频", "经济"],
+    "summary": "适用于轻量制作的镜头、字幕和行动号召清单。"
+  },
+  {
+    "id": "mat-006",
+    "title": "品牌故事访谈提纲",
+    "content_type": "interview_guide",
+    "license": "synthetic",
+    "keywords": ["品牌", "故事", "访谈"],
+    "summary": "用于整理品牌起源、用户价值和未来愿景的合成提纲。"
+  }
+]

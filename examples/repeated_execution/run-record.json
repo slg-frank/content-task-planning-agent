@@ -1,0 +1,48 @@
+{
+  "actual_cli_execution": true,
+  "artifacts": {
+    "first_exit_code": 0,
+    "output_status": "completed",
+    "outputs_identical": true,
+    "plan_sha256": "e45c6b94f953c7baa3bd5fc46fa06c23cf974cc700c32a47c444e4c56ffa9d44",
+    "runtime_created": true,
+    "saved_plan_count": 1,
+    "second_exit_code": 0,
+    "state_plan_trace_unchanged": true,
+    "state_sha256": "c79d75cf08d53481afd09f93e2f0b96637bf508186a35dbb75faf83994093e8c",
+    "trace_created": true,
+    "trace_sha256": "6cdb844a60acd71bb598cb54384d44c5ccd7399c81e54d176621e91399c97a60"
+  },
+  "command": [
+    "python",
+    "-m",
+    "content_agent.cli",
+    "run",
+    "--input",
+    "input.json",
+    "--runtime-dir",
+    "${RUNTIME_ROOT}"
+  ],
+  "exit_code": 0,
+  "generated_at": "2026-10-28T09:25:48.437699+00:00",
+  "path_normalization": {
+    "applied": true,
+    "replacement": "${RUNTIME_ROOT}",
+    "scope": "temporary input and runtime paths only"
+  },
+  "runs": [
+    {
+      "exit_code": 0,
+      "ordinal": 1,
+      "stderr": "任务 acceptance-repeated 已完成；方案：${RUNTIME_ROOT}\\plans\\acceptance-repeated.json；轨迹：${RUNTIME_ROOT}\\traces\\acceptance-repeated.trace.jsonl"
+    },
+    {
+      "exit_code": 0,
+      "ordinal": 2,
+      "stderr": "任务 acceptance-repeated 已完成；方案：${RUNTIME_ROOT}\\plans\\acceptance-repeated.json；轨迹：${RUNTIME_ROOT}\\traces\\acceptance-repeated.trace.jsonl"
+    }
+  ],
+  "scenario": "repeated_execution",
+  "schema_version": 1,
+  "stderr": "任务 acceptance-repeated 已完成；方案：${RUNTIME_ROOT}\\plans\\acceptance-repeated.json；轨迹：${RUNTIME_ROOT}\\traces\\acceptance-repeated.trace.jsonl"
+}

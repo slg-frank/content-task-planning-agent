@@ -1,0 +1,26 @@
+Stage: 08 - 工具失败、部分成功与结果保留
+Date: 2026-10-28 (Asia/Shanghai)
+Environment: Windows, Python 3.13.13, pytest 9.2.0
+
+Stage test command:
+  python -m pytest tests/test_stage_08_failure_recovery.py -v
+Result:
+  5 passed, 0 failed, 0 skipped
+
+Full regression command:
+  python -m pytest tests/ -v
+Result:
+  105 passed, 0 failed, 0 skipped
+
+Verified behavior:
+  - One injected script-generation failure is marked retryable, observed, retried, and recovered.
+  - Successful material-search state and data remain available throughout script failure and retry.
+  - Non-retryable script failure stops safely with the concrete error code and leaves the step failed.
+  - Partial material search forwards only the two real matches; the missing third material is not fabricated.
+  - Repeated retryable failures stop at max_tool_calls without an extra model or tool execution.
+  - Unexpected tool exceptions become non-retryable structured failures instead of leaving a running step.
+  - Failure and retry traces include result summaries, next actions, statuses, and concise decision reasons.
+  - Failed calls remain non-billable while successful calls and final saved output remain consistent.
+
+Stage gate decision:
+  PASSED - 阶段 08 的实现、独立测试和阶段 01～08 全量回归均已完成。

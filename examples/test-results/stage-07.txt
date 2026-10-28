@@ -1,0 +1,31 @@
+Stage: 07 - 预算、截止时间与动态重规划
+Date: 2026-10-28 (Asia/Shanghai)
+Environment: Windows, Python 3.13.13, pytest 9.2.0
+
+Implementation smoke-test finding:
+  The first related-test run found that new constraint fields had been added to
+  TaskPlan but were also required on ExecutionState. ExecutionState was corrected,
+  then the related stage-03/04/06 regression passed 34/34 before stage-07 testing.
+
+Final stage test command:
+  python -m pytest tests/test_stage_07_constraints.py -v
+Result:
+  7 passed, 0 failed, 0 skipped
+
+Full regression command:
+  python -m pytest tests/ -v
+Result:
+  100 passed, 0 failed, 0 skipped
+
+Verified behavior:
+  - Budget 10 rejects the standard estimate 12, selects economy, re-estimates 8, then saves.
+  - Both standard and economy cost-estimation results remain in state and trace history.
+  - Budget 5 returns incomplete with an explicit 3.00 gap and does not save.
+  - A 100-second deadline rejects the 120-second standard profile and completes with the 60-second economy profile.
+  - When even the economy profile misses the deadline, execution stops with a positive time gap.
+  - Over-budget and over-deadline plans cannot invoke the save tool.
+  - A newly selected alternative cannot be saved until that exact profile is re-estimated.
+  - Save protection also checks successful prerequisites and plan-profile consistency.
+
+Stage gate decision:
+  PASSED - 阶段 07 的实现、独立测试和阶段 01～07 全量回归均已完成。

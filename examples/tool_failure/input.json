@@ -1,0 +1,10 @@
+{
+  "budget": "20",
+  "deadline": "2099-12-31T23:59:59+08:00",
+  "failure_injection": {
+    "script_generation": 1
+  },
+  "model_mode": "mock",
+  "task_id": "acceptance-tool-failure",
+  "topic": "秋季新品内容活动"
+}

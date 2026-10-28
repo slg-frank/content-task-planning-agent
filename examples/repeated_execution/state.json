@@ -1,0 +1,165 @@
+{
+  "budget_gap": "0",
+  "deadline_gap_seconds": 0.0,
+  "decision_step_count": 5,
+  "elapsed_duration_seconds": 9.0,
+  "estimated_plan_profile": "standard",
+  "estimated_total_cost": "12.00",
+  "estimated_total_duration_seconds": 120.0,
+  "incomplete_reason": null,
+  "incurred_cost": "4.00",
+  "schema_version": 1,
+  "selected_plan_profile": "standard",
+  "status": "completed",
+  "steps": [
+    {
+      "name": "素材检索",
+      "result": {
+        "data": {
+          "matched_count": 3,
+          "materials": [
+            {
+              "content_type": "outline",
+              "id": "mat-001",
+              "keywords": [
+                "秋季",
+                "新品",
+                "发布"
+              ],
+              "license": "synthetic",
+              "summary": "适用于新品活动的预热、发布和复盘三段式内容框架。",
+              "title": "秋季新品发布内容框架"
+            },
+            {
+              "content_type": "scene_notes",
+              "id": "mat-002",
+              "keywords": [
+                "秋季",
+                "生活方式",
+                "场景"
+              ],
+              "license": "synthetic",
+              "summary": "包含通勤、周末与居家场景的合成素材描述。",
+              "title": "秋季生活方式场景素材"
+            },
+            {
+              "content_type": "copy_template",
+              "id": "mat-003",
+              "keywords": [
+                "新品",
+                "卖点",
+                "转化"
+              ],
+              "license": "synthetic",
+              "summary": "用于将产品特点改写成用户利益点的文案模板。",
+              "title": "新品卖点表达模板"
+            }
+          ],
+          "missing_count": 0,
+          "topic": "秋季新品内容活动"
+        },
+        "duration_seconds": 2.0,
+        "error_code": null,
+        "incurred_cost": "1.00",
+        "partial_success": false,
+        "retryable": false,
+        "success": true,
+        "summary": "Found 3 synthetic material(s)",
+        "tool_name": "material_search",
+        "warnings": []
+      },
+      "status": "succeeded",
+      "step_id": "material_search",
+      "tool_name": "material_search"
+    },
+    {
+      "name": "脚本生成",
+      "result": {
+        "data": {
+          "ignored_material_count": 0,
+          "sections": [
+            {
+              "name": "开场",
+              "text": "从用户场景切入，介绍秋季新品内容活动。"
+            },
+            {
+              "name": "主体",
+              "text": "结合秋季新品发布内容框架、秋季生活方式场景素材、新品卖点表达模板说明核心价值与行动建议。"
+            },
+            {
+              "name": "结尾",
+              "text": "总结要点并邀请用户参与活动。"
+            }
+          ],
+          "topic": "秋季新品内容活动",
+          "used_material_count": 3,
+          "variant": "standard"
+        },
+        "duration_seconds": 5.0,
+        "error_code": null,
+        "incurred_cost": "2.00",
+        "partial_success": false,
+        "retryable": false,
+        "success": true,
+        "summary": "Generated standard script with 3 section(s)",
+        "tool_name": "script_generation",
+        "warnings": []
+      },
+      "status": "succeeded",
+      "step_id": "script_generation",
+      "tool_name": "script_generation"
+    },
+    {
+      "name": "成本估算",
+      "result": {
+        "data": {
+          "estimated_total_cost": "12.00",
+          "estimated_total_duration_seconds": 120.0,
+          "line_items": {
+            "delivery": "1.00",
+            "material_selection": "4.00",
+            "script_production": "4.00",
+            "visual_design": "3.00"
+          },
+          "plan_profile": "standard"
+        },
+        "duration_seconds": 1.0,
+        "error_code": null,
+        "incurred_cost": "0.50",
+        "partial_success": false,
+        "retryable": false,
+        "success": true,
+        "summary": "Estimated standard plan at 12.00 units",
+        "tool_name": "cost_estimation",
+        "warnings": []
+      },
+      "status": "succeeded",
+      "step_id": "cost_estimation",
+      "tool_name": "cost_estimation"
+    },
+    {
+      "name": "方案保存",
+      "result": {
+        "data": {
+          "saved_path": "${RUNTIME_ROOT}\\plans\\acceptance-repeated.json",
+          "task_id": "acceptance-repeated"
+        },
+        "duration_seconds": 1.0,
+        "error_code": null,
+        "incurred_cost": "0.50",
+        "partial_success": false,
+        "retryable": false,
+        "success": true,
+        "summary": "Saved plan for task acceptance-repeated",
+        "tool_name": "plan_save",
+        "warnings": []
+      },
+      "status": "succeeded",
+      "step_id": "plan_save",
+      "tool_name": "plan_save"
+    }
+  ],
+  "task_fingerprint": "26dac8ba39523f0a50cb51d661f885c06dc05c9c555c790c612bad978ced5452",
+  "task_id": "acceptance-repeated",
+  "tool_call_count": 4
+}

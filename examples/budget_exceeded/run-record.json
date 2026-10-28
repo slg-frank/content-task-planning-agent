@@ -1,0 +1,31 @@
+{
+  "actual_cli_execution": true,
+  "artifacts": {
+    "output_status": "completed",
+    "plan_sha256": "2598f865e0b4809526f94bb50b40e5fff35cfb8f213a008e08c3959e2762aa32",
+    "runtime_created": true,
+    "state_sha256": "7dbf26c46181a074bf96ac2f1500bcd80356e9d2a27918b449925c5fab7b4dc6",
+    "trace_created": true,
+    "trace_sha256": "b307605a51ac1d345e41dfd124451b37c56d451bed99262f1616e1e0aafbc051"
+  },
+  "command": [
+    "python",
+    "-m",
+    "content_agent.cli",
+    "run",
+    "--input",
+    "input.json",
+    "--runtime-dir",
+    "${RUNTIME_ROOT}"
+  ],
+  "exit_code": 0,
+  "generated_at": "2026-10-28T09:25:48.125867+00:00",
+  "path_normalization": {
+    "applied": true,
+    "replacement": "${RUNTIME_ROOT}",
+    "scope": "temporary input and runtime paths only"
+  },
+  "scenario": "budget_exceeded",
+  "schema_version": 1,
+  "stderr": "任务 acceptance-budget-replan 已完成；方案：${RUNTIME_ROOT}\\plans\\acceptance-budget-replan.json；轨迹：${RUNTIME_ROOT}\\traces\\acceptance-budget-replan.trace.jsonl"
+}

@@ -1,0 +1,31 @@
+{
+  "actual_cli_execution": true,
+  "artifacts": {
+    "output_status": "completed",
+    "plan_sha256": "e45c6b94f953c7baa3bd5fc46fa06c23cf974cc700c32a47c444e4c56ffa9d44",
+    "runtime_created": true,
+    "state_sha256": "e35f3fd1ad4b02108322efa4b002880412d68f3464cd21118be09a63ab1a39a3",
+    "trace_created": true,
+    "trace_sha256": "efd9f6bca766107616bcd6705f794b4a7af108ec1f6a7fb113cc346702fa720a"
+  },
+  "command": [
+    "python",
+    "-m",
+    "content_agent.cli",
+    "run",
+    "--input",
+    "input.json",
+    "--runtime-dir",
+    "${RUNTIME_ROOT}"
+  ],
+  "exit_code": 0,
+  "generated_at": "2026-10-28T09:25:47.884377+00:00",
+  "path_normalization": {
+    "applied": true,
+    "replacement": "${RUNTIME_ROOT}",
+    "scope": "temporary input and runtime paths only"
+  },
+  "scenario": "tool_failure",
+  "schema_version": 1,
+  "stderr": "任务 acceptance-tool-failure 已完成；方案：${RUNTIME_ROOT}\\plans\\acceptance-tool-failure.json；轨迹：${RUNTIME_ROOT}\\traces\\acceptance-tool-failure.trace.jsonl"
+}

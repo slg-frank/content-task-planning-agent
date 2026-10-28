@@ -1,0 +1,25 @@
+Stage: 02 - 领域模型与输入校验
+Date: 2026-10-28 (Asia/Shanghai)
+Environment: Windows, Python 3.13.13, pytest 9.2.0
+
+Stage test command:
+  python -m pytest tests/test_stage_02_validation.py -v
+Result:
+  26 passed, 0 failed, 0 skipped
+
+Full regression command:
+  python -m pytest tests/ -v
+Result:
+  34 passed, 0 failed, 0 skipped
+
+Verified behavior:
+  - Valid topic, budget, deadline and task ID are normalized into TaskInput.
+  - Missing topic, budget or deadline returns stable structured errors.
+  - Negative, non-numeric and non-finite budgets are rejected.
+  - Invalid, timezone-free and expired deadlines are rejected.
+  - Missing task ID is generated; invalid task IDs are rejected.
+  - Invalid input always returns no task, no steps and zero incurred cost.
+  - Domain status and cost values serialize consistently.
+
+Stage gate decision:
+  PASSED - 阶段 02 的实现、独立测试和阶段 01～02 全量回归均已完成。

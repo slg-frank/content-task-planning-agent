@@ -1,0 +1,28 @@
+{
+  "estimated_total_cost": "8.00",
+  "estimated_total_duration_seconds": 60.0,
+  "profile": "economy",
+  "steps": [
+    {
+      "name": "素材检索",
+      "status": "succeeded",
+      "tool_name": "material_search"
+    },
+    {
+      "name": "脚本生成",
+      "status": "succeeded",
+      "tool_name": "script_generation"
+    },
+    {
+      "name": "成本估算",
+      "status": "succeeded",
+      "tool_name": "cost_estimation"
+    },
+    {
+      "name": "成本估算（economy）",
+      "status": "succeeded",
+      "tool_name": "cost_estimation"
+    }
+  ],
+  "topic": "秋季新品内容活动"
+}

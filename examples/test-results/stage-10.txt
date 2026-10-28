@@ -1,0 +1,32 @@
+Stage: 10 - CLI 集成与端到端输出
+Date: 2026-10-28 (Asia/Shanghai)
+Environment: Windows, Python 3.13.13, pytest 9.2.0
+
+Stage test command:
+  python -m pytest tests/test_stage_10_cli.py -v
+Result:
+  10 passed, 0 failed, 0 skipped
+
+Full regression command:
+  python -m pytest tests/ -v
+Result:
+  122 passed, 0 failed, 0 skipped
+
+Verified behavior:
+  - Direct CLI arguments complete the four-tool workflow and emit parseable full JSON.
+  - Human-readable summaries are emitted to stderr without polluting JSON stdout.
+  - Missing budget or deadline returns exit code 2 and creates no runtime directory.
+  - Budget 10 triggers an observed 12-to-8 alternative selection and re-estimation.
+  - One injected script-generation failure is traced, retried and completed.
+  - Repeated task IDs return identical output without changing state, trace or plan files.
+  - UTF-8 JSON input, custom state/trace directories and JSON result output work together.
+  - An infeasible economy plan returns exit code 3 and retains the actual budget gap.
+  - Real mode without explicit environment configuration returns exit code 4.
+  - README commands and all stage 01-10 regression tests execute successfully.
+
+Boundary:
+  The observation-driven CLI Mock proves deterministic workflow integration only. It does
+  not prove real-model planning quality. Stage 11 acceptance artifacts are not yet created.
+
+Stage gate decision:
+  PASSED - 阶段 10 的实现、独立测试和阶段 01～10 全量回归均已完成。

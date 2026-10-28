@@ -1,0 +1,39 @@
+Stage: 05 - 模型适配层与结构化动作
+Date: 2026-10-28 (Asia/Shanghai)
+Environment: Windows, Python 3.13.13, pytest 9.2.0, openai 2.54.0
+
+Dependency installation:
+  python -m pip install -r requirements.txt
+Result:
+  PASSED
+
+Stage test command:
+  python -m pytest tests/test_stage_05_model_adapter.py -v
+Result:
+  25 passed, 0 failed, 0 skipped
+
+Full regression command:
+  python -m pytest tests/ -v
+Result:
+  87 passed, 0 failed, 0 skipped
+
+SDK compatibility check:
+  Installed openai version: 2.54.0
+  responses.create parameters verified: model, instructions, input, text
+  No network request was sent.
+
+Verified behavior:
+  - Offline Mock returns reproducible actions that pass the same local validation as real output.
+  - call_tool, select_alternative, stop and complete actions parse successfully.
+  - Unknown actions, unknown tools, missing/unknown parameters and invalid types are rejected.
+  - Invalid model output cannot reach tool execution.
+  - The OpenAI adapter requests strict JSON Schema output and performs a second local validation pass.
+  - Missing API key or model configuration returns clear guidance without silent fallback.
+  - Mock mode remains available without environment variables.
+
+Boundary:
+  Real adapter tests used an injected fake client. They verify integration shape and safety,
+  but do not claim real-model decision quality or API availability.
+
+Stage gate decision:
+  PASSED - 阶段 05 的实现、独立测试和阶段 01～05 全量回归均已完成。

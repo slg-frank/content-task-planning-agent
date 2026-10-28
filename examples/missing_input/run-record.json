@@ -1,0 +1,28 @@
+{
+  "actual_cli_execution": true,
+  "artifacts": {
+    "output_status": "invalid_input",
+    "runtime_created": false,
+    "trace_created": false
+  },
+  "command": [
+    "python",
+    "-m",
+    "content_agent.cli",
+    "run",
+    "--input",
+    "input.json",
+    "--runtime-dir",
+    "${RUNTIME_ROOT}"
+  ],
+  "exit_code": 2,
+  "generated_at": "2026-10-28T09:25:47.689038+00:00",
+  "path_normalization": {
+    "applied": true,
+    "replacement": "${RUNTIME_ROOT}",
+    "scope": "temporary input and runtime paths only"
+  },
+  "scenario": "missing_input",
+  "schema_version": 1,
+  "stderr": "输入错误：任务输入校验失败（1 项）"
+}

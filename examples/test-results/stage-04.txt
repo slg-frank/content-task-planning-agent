@@ -1,0 +1,26 @@
+Stage: 04 - 任务状态、持久化与 Trace
+Date: 2026-10-28 (Asia/Shanghai)
+Environment: Windows, Python 3.13.13, pytest 9.2.0
+
+Stage test command:
+  python -m pytest tests/test_stage_04_state_trace.py -v
+Result:
+  12 passed, 0 failed, 0 skipped
+
+Full regression command:
+  python -m pytest tests/ -v
+Result:
+  62 passed, 0 failed, 0 skipped
+
+Verified behavior:
+  - Valid state transitions succeed and unsupported transitions are rejected.
+  - A failed step cannot be changed directly to succeeded or paired with a successful result.
+  - Explicit retry requires failed -> running -> succeeded.
+  - Successful step results survive JSON save and reload in a new store instance.
+  - Cost, elapsed duration and tool call count accumulate exactly once per completed call.
+  - JSONL trace records contain all required fields and preserve contiguous execution order.
+  - Trace records reload in a new recorder instance.
+  - Sensitive keys, nested credentials and environment secret values are redacted.
+
+Stage gate decision:
+  PASSED - 阶段 04 的实现、独立测试和阶段 01～04 全量回归均已完成。

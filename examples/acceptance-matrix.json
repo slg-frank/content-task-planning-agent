@@ -1,0 +1,22 @@
+{
+  "budget_exceeded_dynamic_replan": [
+    "budget_exceeded"
+  ],
+  "different_observations_change_next_action": [
+    "tool_failure",
+    "budget_exceeded"
+  ],
+  "missing_required_input_without_tool_call": [
+    "missing_input"
+  ],
+  "normal_completion_and_save": [
+    "normal"
+  ],
+  "repeated_execution_idempotency": [
+    "repeated_execution"
+  ],
+  "schema_version": 1,
+  "tool_failure_adjustment_and_result_retention": [
+    "tool_failure"
+  ]
+}

@@ -1,0 +1,36 @@
+Stage: 11 - 验收用例、运行记录与最终文档
+Date: 2026-10-28 (Asia/Shanghai)
+Environment: Windows, Python 3.13.13, pytest 9.2.0
+
+Example generation command:
+  python examples/generate_stage_11_examples.py
+Result:
+  Five acceptance scenarios generated from actual CLI subprocess executions.
+
+Stage test command:
+  python -m pytest tests/test_acceptance.py -v
+Result:
+  15 passed, 0 failed, 0 skipped
+
+Full regression command:
+  python -m pytest tests/ -v
+Result:
+  137 passed, 0 failed, 0 skipped
+
+Verified behavior:
+  - Normal input completes all required steps and saves a standard plan.
+  - Missing budget returns structured input error with no runtime, state, plan or trace.
+  - Injected script failure is observed, retried and completed while materials remain intact.
+  - Budget 10 records the 12-unit estimate, a 2-unit gap, economy selection and 8-unit re-estimate.
+  - Repeated execution returns identical output and leaves state, plan and trace unchanged.
+  - Two independent traces prove different observations choose different next actions.
+  - All JSON and JSONL artifacts parse, use portable path placeholders and retain provenance.
+  - The acceptance matrix covers all mandatory scenarios.
+  - All five required documents reference stage 11 and existing example paths.
+
+Known boundary:
+  Examples use the deterministic offline Mock and do not establish real-model quality.
+  Stage 12 security, clean-environment installation and GitHub delivery remain pending.
+
+Stage gate decision:
+  PASSED - 阶段 11 的实际材料、验收测试、最终文档检查和阶段 01～11 回归均已完成。

@@ -1,0 +1,23 @@
+{
+  "currency": "mock_unit",
+  "tool_invocation_costs": {
+    "material_search": "1.00",
+    "script_generation": "2.00",
+    "cost_estimation": "0.50",
+    "plan_save": "0.50"
+  },
+  "plan_profiles": {
+    "standard": {
+      "material_selection": "4.00",
+      "script_production": "4.00",
+      "visual_design": "3.00",
+      "delivery": "1.00"
+    },
+    "economy": {
+      "material_selection": "2.00",
+      "script_production": "2.00",
+      "visual_design": "3.00",
+      "delivery": "1.00"
+    }
+  }
+}

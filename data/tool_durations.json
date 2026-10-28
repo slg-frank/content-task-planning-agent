@@ -1,0 +1,13 @@
+{
+  "unit": "seconds",
+  "tool_durations_seconds": {
+    "material_search": 2.0,
+    "script_generation": 5.0,
+    "cost_estimation": 1.0,
+    "plan_save": 1.0
+  },
+  "plan_profiles_duration_seconds": {
+    "standard": 120.0,
+    "economy": 60.0
+  }
+}

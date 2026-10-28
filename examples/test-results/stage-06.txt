@@ -1,0 +1,34 @@
+Stage: 06 - 核心 ReAct 执行循环
+Date: 2026-10-28 (Asia/Shanghai)
+Environment: Windows, Python 3.13.13, pytest 9.2.0
+
+Initial test finding:
+  The first collection run found that ModelError was not exported by the model package.
+  The package export was corrected before any stage-06 behavior test ran.
+
+Final stage test command:
+  python -m pytest tests/test_stage_06_react_loop.py -v
+Result:
+  6 passed, 0 failed, 0 skipped
+
+Full regression command:
+  python -m pytest tests/ -v
+Result:
+  93 passed, 0 failed, 0 skipped
+
+Verified behavior:
+  - A normal model-action/tool-observation sequence calls all four tools and saves a plan.
+  - Tools are invoked by validated model actions inside AgentRunner, not directly by the test flow.
+  - Every tool result updates step status, cost, duration, call count, state JSON and JSONL trace.
+  - The cost observation updates estimated_total_cost separately from incurred_cost.
+  - Different observed estimates (12.00 vs 8.00) produce different subsequent model actions.
+  - max_steps returns step_limit_reached and max_tool_calls prevents further tool execution.
+  - An early complete action is rejected until every required step actually succeeds.
+  - Persisted state, saved plan and trace records remain consistent at completion.
+
+Boundary:
+  Stage 06 proves the engineering ReAct loop with deterministic Mock decisions.
+  Full budget/deadline replanning is intentionally deferred to stage 07.
+
+Stage gate decision:
+  PASSED - 阶段 06 的实现、独立测试和阶段 01～06 全量回归均已完成。

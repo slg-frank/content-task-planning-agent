@@ -1,0 +1,30 @@
+Stage: 09 - 重复执行与幂等性
+Date: 2026-10-28 (Asia/Shanghai)
+Environment: Windows, Python 3.13.13, pytest 9.2.0
+
+Stage test command:
+  python -m pytest tests/test_stage_09_idempotency.py -v
+Result:
+  7 passed, 0 failed, 0 skipped
+
+Full regression command:
+  python -m pytest tests/ -v
+Result:
+  112 passed, 0 failed, 0 skipped
+
+Verified behavior:
+  - A completed task run twice creates one plan file and incurs one set of tool costs.
+  - The second run does not call the exhausted Mock model or any business tool.
+  - The second result is identical to the first result.
+  - State JSON, trace JSONL and saved plan bytes and modification times remain unchanged.
+  - Topic, budget or deadline changes under the same task ID return task_input_conflict.
+  - Conflict requests do not modify the original completed task.
+  - Numerically equivalent budgets and timezone-equivalent deadlines share a fingerprint.
+  - Repeated incomplete tasks return the original state without repeating successful work.
+
+Boundary:
+  Automatic resume of incomplete tasks is not enabled. This is a deliberate safe default;
+  explicit failed-step resume remains an optional enhancement after core delivery.
+
+Stage gate decision:
+  PASSED - 阶段 09 的实现、独立测试和阶段 01～09 全量回归均已完成。
